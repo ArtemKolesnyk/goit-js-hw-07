@@ -4,7 +4,7 @@ let inputVal = document.querySelector("#validation-input");
 
 let totalLenght = inputVal.getAttribute("data-length");
 let intTotallenght = parseInt(totalLenght, 10);
-console.log(totalLenght);
+
 inputVal.oninput = function() {
   if (inputVal.value.length === intTotallenght) {
     inputVal.classList.remove("invalid");
