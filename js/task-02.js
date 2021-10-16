@@ -9,11 +9,10 @@ const ingredients = [
 
   let ulList = document.querySelector("#ingredients");
 
-  ingredients.map(ingredient => {
+  let marcap = ingredients.map(ingredient => {
   let newLi = document.createElement("li");
-  newLi.innerHTML = ingredient;
-  ulList.append(newLi)
+  newLi.append(ingredient);
+   return newLi
 });
-  
+ ulList.append(...marcap);
 
-console.log(ulList);
