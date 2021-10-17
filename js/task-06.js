@@ -1,12 +1,14 @@
 // Напиши скрипт, который бы при потере фокуса на инпуте, проверял его содержимое на правильное количество символов.
+const inputRef = document.querySelector('#validation-input');
 
-document.querySelector("#validation-input").onblur = function() {
-     console.log(this.value.length);
-    if (this.getAttribute('data-length') > this.value.length) { 
-      this.classList.remove('valid');
-      this.classList.add('invalid');
-    } else {
-      this.classList.remove('invalid');
-      this.classList.add('valid');
-    }
-  };
+const validationInput = () => {
+  if (inputRef.getAttribute('data-length') == inputRef.value.length) {
+    inputRef.classList.add('valid');
+    inputRef.classList.remove('invalid');
+  } else {
+    inputRef.classList.remove('valid');
+    inputRef.classList.add('invalid');
+  }
+};
+inputRef.addEventListener('blur', validationInput);
+  
